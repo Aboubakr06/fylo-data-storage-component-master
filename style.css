@@ -30,8 +30,7 @@
     padding: 0;
 }
 
-html,
-body {
+html, body {
     height: 100%;
 }
 
@@ -40,40 +39,24 @@ body {
     -webkit-font-smoothing: antialiased;
 }
 
-img,
-picture,
-video,
-canvas,
-svg {
+img, picture, video, canvas, svg {
     display: block;
     max-width: 100%;
 }
 
-input,
-button,
-textarea,
-select {
+input, button, textarea, select {
     font: inherit;
 }
 
-p,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+p, h1, h2, h3, h4, h5, h6 {
     overflow-wrap: break-word;
 }
 
-h1,
-h2,
-h3 {
+h1, h2, h3 {
     line-height: 1;
 }
 
-ul,
-li {
+ul, li {
     list-style: none;
 }
 
@@ -94,7 +77,6 @@ body {
     font-weight: var(--fw-regular);
     font-size: 0.875rem;
     color: var(--clr-neutral-200);
-    background-color: var(--clr-neutral-500);
     background-image: url("images/bg-mobile.png");
     background-repeat: no-repeat;
     background-size: cover;
@@ -109,27 +91,29 @@ body {
     gap: 1rem;
     overflow: hidden;
 }
-.section {
+
+.first, .last {
     display: grid;
-    border-radius: 0.5rem;
     background-color: var(--clr-neutral-400);
+    gap: 0.5rem;
+    border-radius: 0.5rem;
+    padding: 2rem;
 }
 
-.head {
+.first {
     padding: 2rem 3rem;
     gap: 2rem;
     border-top-right-radius: 6rem;
 }
 
-.icons {
+.options {
     display: flex;
     align-items: center;
-    justify-content: start;
     gap: 1rem;
 }
 
-.icon{
-    display: grid;
+.option{
+    display: flex;
     align-items: center;
     justify-content: center;
     width: 2.75rem;
@@ -140,69 +124,24 @@ body {
 }
 
 
-.data {
+.last {
     position: relative;
-    display: grid;
     text-align: center;
-    gap: 0.5rem;
-    padding: 2rem;
-    padding-bottom: 3rem;
     margin-bottom: 2rem;
 }
 
-.data-left {
-    display: grid;
-    position: absolute;
-    left: 50%;
-    top: 100%;
-    transform: translate(-50%, -50%);
-    place-content: center;
-    color: var(--clr-neutral-500);
-    width: 9rem;
-    padding: 0 0.2rem;
-    border-radius: 0.5rem;
-    background-color: var(--clr-neutral-100);
-}
-
-.data-left-prg{
-    font-weight: var(--fw-bold);
-    font-size: 2rem;
-    color: var(--clr-neutral-500);
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    
-}
-
-.data-left-prg span{
-    font-size: 0.75rem;
-    text-transform: uppercase;
-    color: var(--clr-neutral-300);
-}
-
-.prg span{
-    font-weight: var(--fw-bold);
-    font-size: 1rem;
-}
-
-.flex-group {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.flex-group p{
+.last__prg span{
     font-weight: var(--fw-bold);
 }
 
-.used {
+.last__used {
     width: 100%;
     height: 1.125rem;
     background-color: var(--clr-neutral-500);
     border-radius: 3.125rem;
 }
 
-.progress {
+.last__progress {
     height: 0.875rem;
     background: linear-gradient(90deg, var(--clr-primary-200), var(--clr-primary-300));
     border-radius: 3.125rem;
@@ -210,7 +149,7 @@ body {
     position: relative;
 }
 
-.progress::before {
+.last__progress::before {
     content: "";
     position: absolute;
     width: 0.8125rem;
@@ -220,9 +159,48 @@ body {
     right: 0.0625rem;
 }
 
+.last__left {
+    display: grid;
+    place-content: center;
+    position: absolute;
+    left: 50%;
+    top: 100%;
+    transform: translate(-50%, -50%);
+    
+    color: var(--clr-neutral-500);
+    width: 9rem;
+    padding: 0 0.2rem;
+    border-radius: 0.5rem;
+    background-color: var(--clr-neutral-100);
+}
+
+.left__prg{
+    font-weight: var(--fw-bold);
+    font-size: 2rem;
+    color: var(--clr-neutral-500);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    
+}
+
+.left__prg span{
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    color: var(--clr-neutral-300);
+}
+
+.flex-group {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-weight: bold;
+}
+
 @media (min-width:47em) {
     body {
         background-image: url("images/bg-desktop.png");
+        background-color: var(--clr-neutral-500);
         background-size: contain;
         background-position: 100% 100%;
         place-content: center;
@@ -233,21 +211,21 @@ body {
         gap: 2rem;
     }
 
-    .data {
+    .last {
         margin: 0;
         margin-top: 2rem;
     }
-    .data .prg {
+    .last__prg {
         text-align: start;
     }
-    .data-left {
+    .last__left {
         left: 75%;
         top: 15%;
         transform: translate(-40%, -100%);
         border-radius: 0.5rem 0.5rem 0rem 0.5rem;
     }
 
-    .data-left::before {
+    .last__left::before {
         content: "";
         position: absolute;
         border-style: solid;
@@ -256,9 +234,8 @@ body {
         right: 0;
         bottom: -2rem;
     } 
-    
 
-    .icons{
+    .options{
         margin-right: 4rem;
     }
 
