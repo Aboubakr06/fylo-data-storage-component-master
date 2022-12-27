@@ -35,7 +35,7 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: (https://www.frontendmentor.io/solutions/testimonials-grid-section-rrnlUacP3_/)
+- Solution URL: (https://www.frontendmentor.io/solutions/fylo-data-storage-component-3sOGKHLQ8-)
 - Live Site URL: (https://comfy-gaufre-8a1717.netlify.app/)
 
 ## My process
@@ -47,31 +47,6 @@ Users should be able to:
 - Flexbox
 - CSS Grid
 - Mobile-first workflow
-
-### What I learned
-
-```css
-input[type=range] {
-    -webkit-appearance: none;
-
-    height: 1rem;
-    border-radius: 1rem;
-    background-color: var(--clr-neutral-500);
-    overflow: hidden;
-}
-
-input[type=range]::-webkit-slider-thumb {
-    -webkit-appearance: none;
-
-    width: 1rem;
-    height: 1rem;
-    border-radius: 50%;
-    background-color: var(--clr-neutral-200);
-    cursor: pointer;
-    border: 2px solid var(--clr-primary-200);
-    box-shadow : -26rem 0 0 25.5rem var(--clr-primary-200);
-}
-```
 
 ## Author
 
